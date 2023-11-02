@@ -6,6 +6,9 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 // Components
 import Nav from '@/components/Nav/Nav';
 
+// Providers
+import QueryClientProvider from '@/providers/QueryClientProvider';
+
 // Styles
 import './globals.scss';
 
@@ -39,8 +42,10 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <Nav locale={locale} />
-        <ThemeRegistry options={{ key: 'mui' }}>{children}</ThemeRegistry>
+        <QueryClientProvider>
+          <Nav locale={locale} />
+          <ThemeRegistry options={{ key: 'mui' }}>{children}</ThemeRegistry>
+        </QueryClientProvider>
       </body>
     </html>
   );
