@@ -1,0 +1,7 @@
+API_SCOPE=
+CLIENT_ID=
+CLIENT_SECRET=
+NEXTAUTH_SECRET=
+# Development: http://localhost:3000/
+# Production: https://yoururl.dev
+NEXTAUTH_URL=
