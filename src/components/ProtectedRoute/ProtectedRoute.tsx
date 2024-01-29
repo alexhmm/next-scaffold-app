@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
-import { redirect } from 'next/navigation';
+
+// Navigation
+import { redirect } from '@/navigation';
 
 // Types
 import { SpotifySession } from '@/types/auth.types';

@@ -1,13 +1,18 @@
 'use client';
 
+import { FC } from 'react';
 import { signOut, useSession } from 'next-auth/react';
 
-const Logout = () => {
+type LogoutProps = {
+  title: string;
+};
+
+const Logout: FC<LogoutProps> = (props) => {
   const session = useSession();
 
   return (
     <button disabled={session.status === 'loading'} onClick={() => signOut()}>
-      Sign out from Spotify
+      {props.title}
     </button>
   );
 };

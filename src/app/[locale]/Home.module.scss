@@ -1,0 +1,6 @@
+.home {
+  @apply flex flex-col items-center;
+  &-title {
+    @apply font-bold text-xl;
+  }
+}

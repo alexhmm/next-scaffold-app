@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  @apply flex flex-col gap-4 items-center w-full;
 }
 
 @layer utilities {

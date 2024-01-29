@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { getServerSession } from 'next-auth';
+import { getTranslations } from 'next-intl/server';
 
 // Auth
-import { authOptions } from './api/auth/[...nextauth]';
+import { authOptions } from '../api/auth/[...nextauth]';
 
 // Components
 import Logout from '@/components/Logout/Logout';
@@ -45,10 +46,13 @@ export default async function Home() {
 
   const data: User = await getUser(session);
 
+  const t = await getTranslations('home');
+
   return (
     <ProtectedRoute session={session}>
       {session?.user && (
-        <div className={styles.home}>
+        <div className={styles['home']}>
+          <h1 className={styles['home-title']}>{t('title')}</h1>
           {data.display_name && <div>{data.display_name}</div>}
           {data.id && <div>{data.id}</div>}
           {data.images[0]?.url && (
@@ -59,7 +63,7 @@ export default async function Home() {
               src={session.user.image}
             />
           )}
-          <Logout />
+          <Logout title={t('logout')} />
         </div>
       )}
     </ProtectedRoute>
