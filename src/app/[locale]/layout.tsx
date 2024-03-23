@@ -9,6 +9,7 @@ import Nav from '@/components/Nav/Nav';
 
 // Providers
 import SessionProvider from '@/providers/SessionProvider';
+import ThemeProvider from '@/providers/ThemeProvider';
 
 // Styles
 import './globals.scss';
@@ -31,17 +32,24 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased',
           outfit.variable
         )}
       >
-        <SessionProvider session={session}>
-          {session?.user && <Nav />}
-          {children}
-        </SessionProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SessionProvider session={session}>
+            {session?.user && <Nav />}
+            {children}
+          </SessionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

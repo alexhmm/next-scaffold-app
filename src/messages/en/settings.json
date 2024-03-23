@@ -5,6 +5,12 @@
       "en": "English (EN)",
       "title": "Change language"
     },
+    "theme": {
+      "dark": "Dark",
+      "light": "Light",
+      "system": "System",
+      "title": "Change theme"
+    },
     "title": "Settings"
   }
 }

@@ -5,6 +5,12 @@
       "en": "Englisch (EN)",
       "title": "Sprache ändern"
     },
+    "theme": {
+      "dark": "Dunkel",
+      "light": "Hell",
+      "system": "System",
+      "title": "Farbmodus ändern"
+    },
     "title": "Einstellungen"
   }
 }
