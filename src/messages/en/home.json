@@ -1,5 +1,6 @@
 {
   "home": {
+    "login": "Sign in with Spotify",
     "logout": "Sign out from Spotify",
     "title": "Welcome"
   }

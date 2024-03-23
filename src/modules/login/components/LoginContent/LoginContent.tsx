@@ -1,17 +1,25 @@
 'use client';
 
 import { signIn, useSession } from 'next-auth/react';
+import { FC } from 'react';
 
-const LoginContent = () => {
+// UI
+import { Button } from '@/components/ui/Button';
+
+type LoginContentProps = {
+  title: string;
+};
+
+const LoginContent: FC<LoginContentProps> = (props) => {
   const session = useSession();
 
   return (
-    <button
+    <Button
       disabled={session.status === 'loading'}
       onClick={() => signIn('spotify')}
     >
-      Sign in with Spotify
-    </button>
+      {props.title}
+    </Button>
   );
 };
 

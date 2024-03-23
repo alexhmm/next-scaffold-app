@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import { getServerSession } from 'next-auth';
-const outfit = Outfit({ subsets: ['latin'] });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 
 // Components
 import Nav from '@/components/Nav/Nav';
@@ -9,10 +10,11 @@ import Nav from '@/components/Nav/Nav';
 // Providers
 import SessionProvider from '@/providers/SessionProvider';
 
-import { ReactNode } from 'react';
-
 // Styles
 import './globals.scss';
+
+// Utils
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,7 +32,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={outfit.className}>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          outfit.variable
+        )}
+      >
         <SessionProvider session={session}>
           {session?.user && <Nav />}
           {children}

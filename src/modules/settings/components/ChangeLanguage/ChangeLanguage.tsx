@@ -9,6 +9,9 @@ import { usePathname, useRouter } from '@/navigation';
 // Types
 import { Language } from '@/types/shared.types';
 
+// UI
+import { Button } from '@/components/ui/Button';
+
 type ChangeLanguageProps = {
   title: string;
 };
@@ -27,7 +30,7 @@ const ChangeLanguage: FC<ChangeLanguageProps> = (props) => {
     });
   }, [locale, pathname]);
 
-  return <button onClick={changeLanguage}>{props.title}</button>;
+  return <Button onClick={changeLanguage}>{props.title}</Button>;
 };
 
 export default ChangeLanguage;
