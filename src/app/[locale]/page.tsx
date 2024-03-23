@@ -55,7 +55,7 @@ export default async function Home() {
           <h1 className={styles['home-title']}>{t('title')}</h1>
           {data.display_name && <div>{data.display_name}</div>}
           {data.id && <div>{data.id}</div>}
-          {data.images[0]?.url && (
+          {data.images && data.images.length > 0 && data.images[0].url && (
             <Image
               alt="User image"
               height={64}
