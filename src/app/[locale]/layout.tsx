@@ -5,7 +5,7 @@ import { getServerSession } from 'next-auth';
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 
 // Components
-import Nav from '@/components/Nav/Nav';
+import Nav from '@/components/misc/Nav/Nav';
 
 // Providers
 import SessionProvider from '@/providers/SessionProvider';

@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { signOut, useSession } from 'next-auth/react';
 
 // UI
-import { Button } from '../ui/Button';
+import { Button } from '../../ui/Button';
 
 type LogoutProps = {
   title: string;

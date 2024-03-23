@@ -2,7 +2,7 @@ import { getServerSession } from 'next-auth';
 import { getTranslations } from 'next-intl/server';
 
 // Components
-import LoginContent from '@/modules/login/components/LoginContent/LoginContent';
+import LoginContent from '@/components/login/LoginContent/LoginContent';
 
 // Navigation
 import { redirect } from '@/navigation';

@@ -6,8 +6,8 @@ import { getTranslations } from 'next-intl/server';
 import { authOptions } from '../api/auth/[...nextauth]';
 
 // Components
-import Logout from '@/components/Logout/Logout';
-import ProtectedRoute from '@/components/ProtectedRoute/ProtectedRoute';
+import Logout from '@/components/misc/Logout/Logout';
+import ProtectedRoute from '@/components/router/ProtectedRoute/ProtectedRoute';
 
 // Styles
 import styles from './Home.module.scss';
