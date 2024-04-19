@@ -1,8 +1,8 @@
 import { useTranslations } from 'next-intl';
 
 // Components
-import ChangeLanguage from '@/components/settings/ChangeLanguage/ChangeLanguage';
-import ChangeTheme from '@/components/settings/ChangeTheme/ChangeTheme';
+import ChangeLanguage from '@/lib/settings/components/ChangeLanguage/ChangeLanguage';
+import ChangeTheme from '@/lib/settings/components/ChangeTheme/ChangeTheme';
 
 // Styles
 import styles from './Settings.module.scss';

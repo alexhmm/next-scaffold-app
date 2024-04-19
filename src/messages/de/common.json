@@ -2,6 +2,7 @@
   "common": {
     "nav": {
       "home": "Home",
+      "notes": "Notizen",
       "settings": "Einstellungen"
     }
   }

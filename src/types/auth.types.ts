@@ -17,3 +17,8 @@ export interface SpotifySession {
     tokenType: string;
   };
 }
+
+export interface SupabaseError {
+  message: string;
+  status?: number;
+}

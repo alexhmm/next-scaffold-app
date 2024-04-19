@@ -5,7 +5,7 @@ import { getServerSession } from 'next-auth';
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 
 // Components
-import Nav from '@/components/misc/Nav/Nav';
+import Nav from '@/lib/components/misc/Nav/Nav';
 
 // Providers
 import SessionProvider from '@/providers/SessionProvider';
@@ -16,6 +16,7 @@ import './globals.scss';
 
 // Utils
 import { cn } from '@/lib/utils';
+import { createClient } from '@/lib/supabase/server';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,6 +31,11 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
   const session = await getServerSession();
+  const supabase = createClient();
+
+  const { data } = await supabase.auth.getSession();
+
+  // console.log('supabase data', data);
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -46,7 +52,8 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <SessionProvider session={session}>
-            {session?.user && <Nav />}
+            {/* {session?.user && <Nav />} */}
+            <Nav session={data.session} />
             {children}
           </SessionProvider>
         </ThemeProvider>

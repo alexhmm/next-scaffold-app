@@ -1,0 +1,6 @@
+.supabase-login-signup-form {
+  @apply flex flex-col gap-2;
+  &-buttons {
+    @apply flex gap-4 items-center justify-center;
+  }
+}
